@@ -1,0 +1,38 @@
+[
+    {
+        "title": "Meet EVA: The AI Sales Rep That Never Sleeps (Or Ghosts Your Leads)",
+        "image": "/assets/blog1.jpg",
+        "author_image": "https://example.com/images/author1.jpg",
+        "author_name": "John Doe",
+        "date_published": "2024-10-05",
+        "description": "Learn how to maximize your productivity with link management tools.",
+        "slug": "meet-eva-ai-sales-rep-that-never-sleeps"
+    },
+    {
+        "title": "From Cold Outreach to Closed Deals: How AI Agents Are Replacing SDRs",
+        "image": "/assets/blog2.jpg",
+        "author_image": "https://example.com/images/author2.jpg",
+        "author_name": "Jane Smith",
+        "date_published": "2024-09-28",
+        "description": "How to organize links for teams.",
+        "slug": "ai-agents-replacing-sdrs-cold-to-closed-deals"
+    },
+    {
+        "title": "Why Your Startup Needs an AI Sales Agent Before Hiring a Real One",
+        "image": "/assets/blog3.jpg",
+        "author_image": "https://example.com/images/author3.jpg",
+        "author_name": "Chris Martin",
+        "date_published": "2024-09-20",
+        "description": "Link management is essential for digital marketers.",
+        "slug": "why-startup-needs-ai-sales-agent-first"
+    },
+    {
+        "title": "24/7 Selling Machine: Inside the Tech That Powers EVA",
+        "image": "/assets/blog4.jpg",
+        "author_image": "https://example.com/images/author4.jpg",
+        "author_name": "Emily Clark",
+        "date_published": "2024-09-15",
+        "description": "The features that every link management software should have.",
+        "slug": "inside-tech-that-powers-eva-sales-agent"
+    }
+]
