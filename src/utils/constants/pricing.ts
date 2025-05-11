@@ -171,7 +171,7 @@ export const PLANS = [
       name: "Free",
       info: "For early users and solo founders",
       price: {
-        monthly: 0,
+        monthly: 0,yearly: Math.round(0 * 12 * (1 - 0.12)),
       },
       features: [
         { text: "AI chat support", tooltip: "Respond to inquiries in real-time via web chat" },

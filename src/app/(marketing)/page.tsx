@@ -14,19 +14,21 @@ import { ArrowRightIcon, CreditCardIcon, StarIcon } from "lucide-react";
 import Image from "next/image";
 import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton } from '@clerk/nextjs';
 import Link from "next/link";
+import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
+import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 
 const HomePage = async () => {
 
     const user = await currentUser();
 
     return (
-    //     <ClerkProvider>
-    // <SignedOut>
-    //   <SignInButton />
-    // </SignedOut>
-    // <SignedIn>
-    //   <UserButton />
-    // </SignedIn>
+        //     <ClerkProvider>
+        // <SignedOut>
+        //   <SignInButton />
+        // </SignedOut>
+        // <SignedIn>
+        //   <UserButton />
+        // </SignedIn>
         <div className="overflow-x-hidden scrollbar-hide size-full">
             {/* Hero Section */}
             <MaxWidthWrapper>
@@ -54,12 +56,16 @@ const HomePage = async () => {
                             <span className="hidden md:block">Shorten, track, and organize all your work in one place.</span>
                         </p>
                         <div className="flex items-center justify-center whitespace-nowrap gap-4 z-50">
-                            <Button asChild>
-                                <Link href={user ? "/dashboard" : "/auth/sign-in"} className="flex items-center">
-                                    Start working for free
-                                    <ArrowRightIcon className="w-4 h-4 ml-2" />
-                                </Link>
-                            </Button>
+                            {/* <Link href={user ? "/dashboard" : "/auth/sign-in"} className="flex items-center"> */}
+                            <InteractiveHoverButton>
+                                <a
+                                    href="https://calendly.com/cloverservices12/30min/"
+                                    target="_blank"
+                                    rel="noopener noreferrer">
+                                    Book a Call...
+                                </a>
+                            </InteractiveHoverButton>
+                            {/* </Link> */}
                         </div>
                     </AnimationContainer>
 
@@ -74,7 +80,7 @@ const HomePage = async () => {
                             <Image
                                 src="/assets/dashboard-dark.svg"
                                 alt="Dashboard"
-                                width={1200} 
+                                width={1200}
                                 height={1200}
                                 quality={100}
                                 className="rounded-md lg:rounded-xl bg-foreground/10 ring-1 ring-border"

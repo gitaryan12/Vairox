@@ -34,7 +34,7 @@ export const COMPANIES = [
 export const PROCESS = [
     {
         title: "Organize Your Leads",
-        description: "Efficiently categorize and easy management.",
+        description: "Efficiently categorize and easy management. Integrate with your favorite tools.",
         icon: FolderOpenIcon,
     },
     {
@@ -103,14 +103,14 @@ export const REVIEWS = [
         username: "@sophiabrown",
         avatar: "https://randomuser.me/api/portraits/women/2.jpg",
         rating: 4,
-        review: "This app is fantastic! It offers AI SDR Eva ~ everything I need to manage my leads efficiently."
+        review: "This app is fantastic! It offers AI SDR Eva ~ everything I need to manage my leads efficiently. Very user-friendly and intuitive."
     },
     {
         name: "James Taylor",
         username: "@jamestaylor",
         avatar: "https://randomuser.me/api/portraits/men/3.jpg",
         rating: 5,
-        review: "Absolutely love this app! It's intuitive and feature-rich."
+        review: "Absolutely love this app! It's intuitive and feature-rich. Budget friendly too. The AI SDR Eva is a game-changer for my sales process."
     },
     {
         name: "Olivia Martinez",

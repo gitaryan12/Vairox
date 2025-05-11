@@ -75,7 +75,7 @@ const Navbar = () => {
                                                         link.title === "Features" ? "lg:grid-cols-[.75fr_1fr]" : "lg:grid-cols-2"
                                                     )}>
                                                         {link.title === "Features" && (
-                                                            <li className="row-span-4 pr-2 relative rounded-lg overflow-hidden">
+                                                            <li className="row-span-5 pr-2 relative rounded-lg overflow-hidden">
                                                                 <div className="absolute inset-0 !z-10 h-full w-[calc(100%-10px)] bg-[linear-gradient(to_right,rgb(38,38,38,0.5)_1px,transparent_1px),linear-gradient(to_bottom,rgb(38,38,38,0.5)_1px,transparent_1px)] bg-[size:1rem_1rem]"></div>
                                                                 <NavigationMenuLink asChild className="z-20 relative">
                                                                     <Link

@@ -14,13 +14,13 @@ const Footer = () => {
                 <AnimationContainer delay={0.1}>
                     <div className="flex flex-col items-start justify-start md:max-w-[200px]">
                         <div className="flex items-start">
-                           <Image 
-                           src={'/icons/logo.png'}
-                           alt={'logo'}
-                           width={50}
-                           height={50}
-                           className="rounded-2xl"
-                           />
+                            <Image
+                                src={'/icons/logo.png'}
+                                alt={'logo'}
+                                width={50}
+                                height={50}
+                                className="rounded-2xl"
+                            />
 
                         </div>
                         <p className="text-muted-foreground mt-4 text-sm text-start">
@@ -69,26 +69,32 @@ const Footer = () => {
                                     Integrations
                                 </h3>
                                 <ul className="mt-4 text-sm text-muted-foreground">
-                                    <li className="">
-                                        <Link href="" className="hover:text-foreground transition-all duration-300">
-                                            Facebook
-                                        </Link>
+                                    <li className="mt-2">
+                                        {/* <Link href="" className="hover:text-foreground transition-all duration-300"> */}
+                                        <a href="https://www.instagram.com/vairoxai/" target="_blank"
+                                            rel="noopener noreferrer">
+                                            Instagram</a>
+                                        {/* </Link> */}
                                     </li>
                                     <li className="mt-2">
-                                        <Link href="" className="hover:text-foreground transition-all duration-300">
-                                            Instagram
-                                        </Link>
+                                        {/* <Link href="" className="hover:text-foreground transition-all duration-300"> */}
+                                        <a href="https://www.x.com/vairoxai" target="_blank"
+                                            rel="noopener noreferrer">
+                                            Twitter</a>
+                                        {/* </Link> */}
                                     </li>
                                     <li className="mt-2">
-                                        <Link href="" className="hover:text-foreground transition-all duration-300">
-                                            Twitter
-                                        </Link>
+                                        {/* <Link href="" className="hover:text-foreground transition-all duration-300"> */}
+                                        <a href="https://www.linkedin.com/vairoxai" target="_blank"
+                                            rel="noopener noreferrer">
+                                            LinkedIn</a>
+                                        {/* </Link> */}
                                     </li>
-                                    <li className="mt-2">
-                                        <Link href="" className="hover:text-foreground transition-all duration-300">
-                                            LinkedIn
+                                    {/* <li className="">
+                                        <Link href="" className="hover:text-foreground transition-all duration-300"><a href="https://www.facebook.com/">
+                                            Facebook</a>
                                         </Link>
-                                    </li>
+                                    </li> */}
                                 </ul>
                             </div>
                         </AnimationContainer>

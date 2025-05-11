@@ -1,10 +1,22 @@
-import { HelpCircleIcon, LineChartIcon, Link2Icon, LockIcon, NewspaperIcon, QrCodeIcon } from "lucide-react";
+import { DollarSignIcon, HelpCircleIcon, LineChartIcon, Link2Icon, LockIcon, NewspaperIcon, QrCodeIcon, StarIcon } from "lucide-react";
 
 export const NAV_LINKS = [
     {
         title: "Features",
         href: "/features",
         menu: [
+            {
+                title: "Eva - AI SDR",
+                tagline: "Your AI Sales Development Representative.",
+                href: "/features/eva-ai-sdr",
+                icon: StarIcon,
+            },
+            {
+                title: "Outreacho 1.0",
+                tagline: "Automate your outreach with AI.",
+                href: "/features/outreacho",
+                icon: DollarSignIcon,
+            },
             {
                 title: "Lead Generation",
                 tagline: "Generate high-ticket leads and track their performance.",
