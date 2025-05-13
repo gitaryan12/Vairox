@@ -1,4 +1,4 @@
-import { DollarSignIcon, HelpCircleIcon, LineChartIcon, Link2Icon, LockIcon, NewspaperIcon, QrCodeIcon, StarIcon } from "lucide-react";
+import { DollarSignIcon, EggFriedIcon, HelpCircleIcon, LineChartIcon, Link2Icon, LockIcon, NewspaperIcon, QrCodeIcon, StarIcon } from "lucide-react";
 
 export const NAV_LINKS = [
     {
@@ -15,7 +15,7 @@ export const NAV_LINKS = [
                 title: "Outreacho 1.0",
                 tagline: "Automate your outreach with AI.",
                 href: "/features/outreacho",
-                icon: DollarSignIcon,
+                icon: EggFriedIcon,
             },
             {
                 title: "Lead Generation",
@@ -23,18 +23,18 @@ export const NAV_LINKS = [
                 href: "/features/lead-generation",
                 icon: Link2Icon,
             },
-            {
-                title: "Privacy protection",
-                tagline: "Secure your work with Vairox.",
-                href: "/features/privacy-protection",
-                icon: LockIcon,
-            },
-            {
-                title: "Advanced analytics",
-                tagline: "Gain insights into business and community.",
-                href: "/features/analytics",
-                icon: LineChartIcon,
-            },
+            // {
+            //     title: "Privacy protection",
+            //     tagline: "Secure your work with Vairox.",
+            //     href: "/features/privacy-protection",
+            //     icon: LockIcon,
+            // },
+            // {
+            //     title: "Advanced analytics",
+            //     tagline: "Gain insights into business and community.",
+            //     href: "/features/analytics",
+            //     icon: LineChartIcon,
+            // },
             // {
             //     title: "Custom QR Codes",
             //     tagline: "Use QR codes to reach your audience.",

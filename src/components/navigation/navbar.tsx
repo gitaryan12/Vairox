@@ -49,15 +49,15 @@ const Navbar = () => {
             <AnimationContainer reverse delay={0.1} className="size-full">
                 <MaxWidthWrapper className="flex items-center justify-between">
                     <div className="flex items-center space-x-12">
-                    <Image
-                            src="/icons/logo.png"
-                            alt="logo"
-                            width={35}
-                            height={35}
-                            className="rounded-xl -mr-10"
-                        />
-                        <Link href="/#home">
-                            <span className="text-lg font-bold font-heading !leading-none">
+                        <Link href="/#home" className="bg-black/30 flex items-center space-x-12 border border-white/10 rounded-2xl px-1 py-1 hover:bg-white/5 transition-all duration-200 ease-out">
+                            <Image
+                                src="/icons/logo.png"
+                                alt="logo"
+                                width={35}
+                                height={35}
+                                className="rounded-xl -mr-9"
+                            />
+                            <span className="text-lg font-bold mt-1 pr-2 font-heading !leading-none">
                                 Vairox
                             </span>
                         </Link>
@@ -70,13 +70,17 @@ const Navbar = () => {
                                             <>
                                                 <NavigationMenuTrigger>{link.title}</NavigationMenuTrigger>
                                                 <NavigationMenuContent>
+
                                                     <ul className={cn(
                                                         "grid gap-1 p-4 md:w-[400px] lg:w-[500px] rounded-xl",
                                                         link.title === "Features" ? "lg:grid-cols-[.75fr_1fr]" : "lg:grid-cols-2"
                                                     )}>
+
                                                         {link.title === "Features" && (
                                                             <li className="row-span-5 pr-2 relative rounded-lg overflow-hidden">
-                                                                <div className="absolute inset-0 !z-10 h-full w-[calc(100%-10px)] bg-[linear-gradient(to_right,rgb(38,38,38,0.5)_1px,transparent_1px),linear-gradient(to_bottom,rgb(38,38,38,0.5)_1px,transparent_1px)] bg-[size:1rem_1rem]"></div>
+                                                                <div className="absolute inset-0 !z-10 h-full w-[calc(100%-10px)] bg-[linear-gradient(to_right,rgb(38,38,38,0.5)_1px,transparent_1px),linear-gradient(to_bottom,rgb(38,38,38,0.5)_1px,transparent_1px)] bg-[size:1rem_1rem]">
+                                                                </div>
+                                                                
                                                                 <NavigationMenuLink asChild className="z-20 relative">
                                                                     <Link
                                                                         href="/"
