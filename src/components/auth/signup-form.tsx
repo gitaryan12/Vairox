@@ -17,7 +17,7 @@ const SignUpForm = () => {
 
     const { signUp, isLoaded, setActive } = useSignUp();
 
-    const [name, setName] = useState<string>("");
+    const [fullName, setFullName] = useState<string>("");
     const [email, setEmail] = useState<string>("");
     const [code, setCode] = useState<string>("");
     const [password, setPassword] = useState<string>("");
@@ -31,10 +31,15 @@ const SignUpForm = () => {
 
         if (!isLoaded) return;
 
-        if (!name || !email || !password) {
+        // if (!name || !email || !password) {
+        //     toast.error("Name, email and password are required!");
+        //     return;
+        // }
+        if (!email || !password) {
             toast.error("Name, email and password are required!");
             return;
         }
+
 
         setIsUpdating(true);
 
@@ -182,20 +187,20 @@ const SignUpForm = () => {
             </h2>
 
             <form onSubmit={handleSignUp} className="w-full">
-                {/* <div className="space-y-2 w-full">
+                <div className="space-y-2 w-full">
                     <Label htmlFor="name">
                         Name
                     </Label>
                     <Input
                         id="name"
-                        type="name"
-                        value={name}
+                        type="text"
+                        value={fullName}
                         disabled={!isLoaded || isUpdating}
-                        onChange={(e) => setName(e.target.value)}
+                        onChange={(e) => setFullName(e.target.value)}
                         placeholder="Enter your name"
                         className="w-full focus-visible:border-foreground"
                     />
-                </div> */}
+                </div>
                 <div className="space-y-2 w-full">
                     <Label htmlFor="email">
                         Email
@@ -249,6 +254,14 @@ const SignUpForm = () => {
                         ) : "Continue"}
                     </Button>
                 </div>
+                {/* <div>
+                    <p>
+                        Forgot your password?{" "}
+                        <button onClick={() => router.push("/reset-password")}>
+                            Reset Password
+                        </button>
+                    </p>
+                </div> */}
             </form>
         </div>
     )
