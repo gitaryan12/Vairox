@@ -8,13 +8,9 @@ import MagicBadge from "@/components/ui/magic-badge";
 import MagicCard from "@/components/ui/magic-card";
 import { COMPANIES, PROCESS } from "@/utils";
 import { REVIEWS } from "@/utils/constants/misc";
-import { ClerkProvider } from "@clerk/nextjs";
 import { currentUser } from "@clerk/nextjs/server";
 import { ArrowRightIcon, CreditCardIcon, StarIcon } from "lucide-react";
 import Image from "next/image";
-import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton } from '@clerk/nextjs';
-import Link from "next/link";
-import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 
 const HomePage = async () => {
@@ -22,17 +18,11 @@ const HomePage = async () => {
     const user = await currentUser();
 
     return (
-        //     <ClerkProvider>
-        // <SignedOut>
-        //   <SignInButton />
-        // </SignedOut>
-        // <SignedIn>
-        //   <UserButton />
-        // </SignedIn>
         <div className="overflow-x-hidden scrollbar-hide size-full">
             {/* Hero Section */}
             <MaxWidthWrapper>
                 <div className="flex flex-col items-center justify-center w-full text-center bg-gradient-to-t from-background">
+
                     <AnimationContainer className="flex flex-col items-center justify-center w-full text-center">
                         <button className="group relative grid overflow-hidden rounded-full px-4 py-1 shadow-[0_1000px_0_0_hsl(0_0%_20%)_inset] transition-colors duration-200">
                             <span>
@@ -41,6 +31,7 @@ const HomePage = async () => {
                             <span className="backdrop absolute inset-[1px] rounded-full bg-neutral-950 transition-colors duration-200 group-hover:bg-neutral-900" />
                             <span className="h-full w-full blur-md absolute bottom-0 inset-x-0 bg-gradient-to-tr from-primary/20"></span>
                             <span className="z-10 py-0.5 text-sm text-neutral-100 flex items-center justify-center gap-1">
+
                                 ✨ Manage Biz smarter
                                 <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
                             </span>
@@ -331,7 +322,6 @@ const HomePage = async () => {
                 </AnimationContainer>
             </MaxWidthWrapper>
         </div>
-        // </ClerkProvider>
     )
 };
 
