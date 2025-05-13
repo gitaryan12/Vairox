@@ -57,7 +57,7 @@ const Navbar = () => {
                                 height={35}
                                 className="rounded-xl -mr-9"
                             />
-                            <span className="text-lg font-bold mt-1 pr-2 font-heading !leading-none">
+                            <span className="text-lg font-bold pr-2 font-heading !leading-none">
                                 Vairox
                             </span>
                         </Link>
