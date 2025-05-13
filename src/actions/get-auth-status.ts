@@ -4,7 +4,8 @@ import { db } from "@/lib";
 import { currentUser } from "@clerk/nextjs/server";
 
 const getAuthStatus = async () => {
-    const user = await currentUser();
+    try {
+        const user = await currentUser();
 
     if (!user?.id || !user?.primaryEmailAddress?.emailAddress) {
         return { error: "User not found" };
@@ -25,13 +26,17 @@ const getAuthStatus = async () => {
             data: {
                 clerkId,
                 email: user.primaryEmailAddress.emailAddress,
-                name: user.fullName || user.firstName,
+                name: user.firstName || user.lastName,
+                // name: `${user.firstName || ''} ${user.lastName || ''}`.trim(),
                 image: user.imageUrl,
             },
         });
     }
-
     return { success: true };
+}    catch(error)  {
+        console.error("Auth error", error);
+        return { error: "Internal server error" };
+    }
 };
 
 export default getAuthStatus;

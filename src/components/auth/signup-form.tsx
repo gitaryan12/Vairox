@@ -42,8 +42,9 @@ const SignUpForm = () => {
             await signUp.create({
                 emailAddress: email,
                 password,
-                firstName: name.split(" ")[0],
-                lastName: name.split(" ")[1],
+                // firstName: name.split(" ")[0],
+                // lastName: name.split(" ")[1],
+
             });
 
             await signUp.prepareEmailAddressVerification({
@@ -181,7 +182,7 @@ const SignUpForm = () => {
             </h2>
 
             <form onSubmit={handleSignUp} className="w-full">
-                <div className="space-y-2 w-full">
+                {/* <div className="space-y-2 w-full">
                     <Label htmlFor="name">
                         Name
                     </Label>
@@ -194,8 +195,8 @@ const SignUpForm = () => {
                         placeholder="Enter your name"
                         className="w-full focus-visible:border-foreground"
                     />
-                </div>
-                <div className="mt-4 space-y-2 w-full">
+                </div> */}
+                <div className="space-y-2 w-full">
                     <Label htmlFor="email">
                         Email
                     </Label>
