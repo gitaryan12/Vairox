@@ -15,6 +15,7 @@ import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-b
 import Container from "@/components/global/container";
 import Marquee from "@/components/ui/marquee";
 import { Spotlight } from "@/components/ui/spotlight";
+import HeroVideoDialog from "@/components/magicui/hero-video-dialog";
 
 
 const HomePage = async () => {
@@ -30,7 +31,7 @@ const HomePage = async () => {
                     <AnimationContainer className="flex flex-col items-center justify-center w-full text-center z-50">
                         <Spotlight
                             className="-top-50 left-0 md:left-60 md:-top-20"
-                            fill="rgba(255, 255, 255, 0.5)"/>
+                            fill="rgba(255, 255, 255, 0.5)" />
                         {/* <button className="group relative grid overflow-hidden rounded-full px-4 py-1 shadow-[0_1000px_0_0_hsl(0_0%_20%)_inset] transition-colors duration-200">
                             <span>
                                 <span className="spark mask-gradient absolute inset-0 h-[100%] w-[100%] animate-flip overflow-hidden rounded-full [mask:linear-gradient(white,_transparent_50%)] before:absolute before:aspect-square before:w-[200%] before:rotate-[-90deg] before:animate-rotate before:bg-[conic-gradient(from_0deg,transparent_0_340deg,white_360deg)] before:content-[''] before:[inset:0_auto_auto_50%] before:[translate:-50%_-15%]" />
@@ -62,9 +63,10 @@ const HomePage = async () => {
                             </div>
                         </Container>
                         <h1 className="text-foreground text-center py-6 text-5xl font-medium tracking-normal text-balance sm:text-6xl md:text-7xl lg:text-8xl !leading-[1.15] w-full font-heading">
-                            <span className="text-transparent bg-gradient-to-t from-neutral-600/10 to-white bg-clip-text inline-blo" >Your AI Wingman for </span>
-                            <span className="text-transparent bg-gradient-to-t from-violet-500 to-fuchsia-500 bg-clip-text inline-bloc">
-                                Sales
+                            {/* <span className="text-transparent bg-gradient-to-t from-gray-100/10 to-white bg-clip-text inline-block" >Your AI Wingman for </span> */}
+                            <span className="inline-block tracking-tighter" >Your AI Wingman for </span>
+                            <span className="text-transparent bg-gradient-to-t from-violet-500 to-fuchsia-500 bg-clip-text inline-block">
+                                Leads
                             </span>
                         </h1>
                         <p className="mb-12 text-lg tracking-tight text-muted-foreground md:text-xl text-balance">
@@ -72,7 +74,7 @@ const HomePage = async () => {
                             <br className="hidden md:block" />
                             <span className="hidden md:block">Shorten, track, and organize all your work in one place.</span>
                         </p>
-                        {/* <div className="flex items-center justify-center whitespace-nowrap gap-4 z-50"> */}
+                        <div className="flex items-center justify-center whitespace-nowrap gap-4 z-50 -translate-y-7">
                             {/* <Link href={user ? "/dashboard" : "/auth/sign-in"} className="flex items-center"> */}
                             <InteractiveHoverButton>
                                 <a
@@ -83,25 +85,32 @@ const HomePage = async () => {
                                 </a>
                             </InteractiveHoverButton>
                             {/* </Link> */}
-                        {/* </div> */}
+                        </div>
                     </AnimationContainer>
 
                     <AnimationContainer delay={0.2} className="relative pt-20 pb-20 md:py-32 px-2 bg-transparent w-full mt-12 z-40">
                         {/* <div className="relative mx-auto max-w-7xl rounded-xl lg:rounded-[32px] border border-neutral-200/50 p-2 backdrop-blur-lg border-neutral-700 bg-neutral-800/50 md:p-4 mt-12"></div> */}
-                        <div className="absolute md:top-[13%] left-1/2 gradient w-3/4 -translate-x-1/2 h-1/4 md:h-1/3 inset-0 blur-[5rem] animate-image-glow"></div>
-                        <div className="rounded-xl p-2 ring-1 ring-inset ring-foreground/20 lg:-m-4 lg:rounded-2xl bg-opacity-50 backdrop-blur-3xl">
+                        <div className="absolute md:top-[5%] left-1/2 gradient w-3/4 -translate-x-1/2 h-1/4 md:h-1/3 inset-0 blur-[5rem] animate-image-glow"></div>
+                        <div className="rounded-2xl p-2 ring-1 ring-inset ring-foreground/20 lg:-m-4 bg-opacity-50 backdrop-blur-3xl -translate-y-32">
                             {/* <BorderBeam
                                 size={250}
                                 duration={12}
                                 delay={9}
                             /> */}
-                            <Image
+                            {/* <Image
                                 src="/assets/dashboard-dark.svg"
                                 alt="Dashboard"
                                 width={1200}
                                 height={1200}
                                 quality={100}
                                 className="rounded-md lg:rounded-xl bg-foreground/10 ring-1 ring-border"
+                            /> */}
+                            <HeroVideoDialog
+                                className="block dark:hidden"
+                                animationStyle="from-center"
+                                videoSrc="https://www.youtube.com/lovablehttps://youtu.be/xDwR1_vrIg8?si=wMRg5pHje_OOM1-P"
+                                thumbnailSrc="/assets/dashboard-dark.svg"
+                                thumbnailAlt="Thumb"
                             />
                             <div className="absolute -bottom-4 inset-x-0 w-full h-1/2 bg-gradient-to-t from-background z-40"></div>
                             <div className="absolute bottom-0 md:-bottom-8 inset-x-0 w-full h-1/4 bg-gradient-to-t from-background z-50"></div>
