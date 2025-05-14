@@ -1,8 +1,11 @@
 import type { Config } from "tailwindcss"
 
-const colors = require("tailwindcss/colors");
 const svgToDataUri = require("mini-svg-data-uri");
-const { default: flattenColorPalette } = require("tailwindcss/lib/util/flattenColorPalette");
+
+const colors = require("tailwindcss/colors");
+const {
+  default: flattenColorPalette,
+} = require("tailwindcss/lib/util/flattenColorPalette");
 
 const config = {
   darkMode: ["class"],
@@ -32,17 +35,13 @@ const config = {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
         },
+        primaryLight: {
+          DEFAULT: "hsl(var(--primary-light))",
+          foreground: "hsl(var(--primary-light-foreground))",
+        },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
-        },
-        tertiary: {
-          DEFAULT: "hsl(var(--tertiary))",
-          foreground: "hsl(var(--tertiary-foreground))",
-        },
-        subtle: {
-          DEFAULT: "hsl(var(--subtle))",
-          foreground: "hsl(var(--subtle-foreground))",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
@@ -71,7 +70,7 @@ const config = {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        "heading": ["var(--font-aeonik)"],
+        "heading": ["var(--font-inter)"],
         "default": ["var(--font-inter)"],
       },
       keyframes: {
@@ -87,86 +86,25 @@ const config = {
           "0%": { transform: "translateY(-50%)" },
           "100%": { transform: "translateY(0)" },
         },
-        "wiggle": {
-          "0%, 100%": {
-            transform: "translateX(0%)",
-            transformOrigin: "50% 50%",
-          },
-          "15%": { transform: "translateX(-4px) rotate(-4deg)" },
-          "30%": { transform: "translateX(6px) rotate(4deg)" },
-          "45%": { transform: "translateX(-6px) rotate(-2.4deg)" },
-          "60%": { transform: "translateX(2px) rotate(1.6deg)" },
-          "75%": { transform: "translateX(-1px) rotate(-0.8deg)" },
-        },
-        "spinner": {
-          "0%": {
-            opacity: "1",
-          },
-          "100%": {
-            opacity: "0",
-          },
-        },
-        "blink": {
-          "0%": {
-            opacity: "0.2",
-          },
-          "20%": {
-            opacity: "1",
-          },
-          "100%": {
-            opacity: "0.2",
-          },
-        },
-        "shimmer": {
-          "0%, 90%, 100%": {
-            "background-position": "calc(-100% - var(--shimmer-width)) 0",
-          },
-          "30%, 60%": {
-            "background-position": "calc(100% + var(--shimmer-width)) 0",
-          },
-        },
-        "image-glow": {
-          "0%": {
-            "opacity": "0",
-            "animation-timing-function": "cubic-bezier(.74, .25, .76, 1)",
-          },
-          "10%": {
-            "opacity": "0.5",
-            "animation-timing-function": "cubic-bezier(.12, .01, .08, .99)",
-          },
-          "100%": {
-            "opacity": "0.7",
-          },
-        },
-        "border-beam": {
-          "100%": {
-            "offset-distance": "100%",
-          },
+        "background-shine": {
+          "from": { "backgroundPosition": "0 0" },
+          "to": { "backgroundPosition": "-200% 0" }
         },
         "marquee": {
-          from: { transform: "translateX(0)" },
-          to: { transform: "translateX(calc(-100% - var(--gap)))" },
+          "from": { transform: "translateX(0)" },
+          "to": { transform: "translateX(calc(-100% - var(--gap)))" },
         },
-        "flip": {
-          to: {
-            transform: "rotate(360deg)",
-          },
+        "ripple": {
+          "0%, 100%": { transform: "translate(-50%, -50%) scale(1)", },
+          "50%": { transform: "translate(-50%, -50%) scale(0.9)", },
         },
-        "rotate": {
-          to: {
-            transform: "rotate(90deg)",
-          },
-        },
-        "caret-blink": {
-          "0%,70%,100%": { opacity: "1" },
-          "20%,50%": { opacity: "0" },
+        spotlight: {
+          "0%": { opacity: "0", transform: "translate(-72%, -62%) scale(0.5)", },
+          "100%": { opacity: "1", transform: "translate(-50%,-40%) scale(1)", },
         },
         "loading": {
-          "0%": {
-            transform: "rotate(0deg)",
-          },
-          "100%": {
-            transform: "rotate(360deg)",
+          "to": {
+            transform: "rotate(360deg)"
           },
         }
       },
@@ -174,24 +112,21 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "grid": "grid 15s linear infinite",
-        "wiggle": "wiggle 0.75s infinite",
-        "spinner": "spinner 1.2s linear infinite",
-        "blink": "blink 1.4s infinite both",
-        "shimmer": "shimmer 5s infinite",
-        "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
-        "image-glow": "image-glow 4s ease-out 0.6s forwards",
+        "background-shine": "background-shine 2s linear infinite",
         "marquee": "marquee var(--duration) linear infinite",
-        "flip": "flip 6s infinite steps(2, end)",
-        "rotate": "rotate 3s linear infinite both",
-        "caret-blink": "caret-blink 1.25s ease-out infinite",
-        "loading": "loading 0.5s linear infinite",
+        "ripple": "ripple var(--duration,2s) ease calc(var(--i, 0)*.2s) infinite",
+        "spotlight": "spotlight 2s ease .75s 1 forwards",
+        "loading": "loading 0.6s linear infinite",
+      },
+      spacing: {
+        "1/8": "12.5%",
       },
     },
   },
   plugins: [
+    addVariablesForColors,
     require("tailwindcss-animate"),
     require("tailwind-scrollbar-hide"),
-    addVariablesForColors,
     function ({ matchUtilities, theme }: any) {
       matchUtilities(
         {
