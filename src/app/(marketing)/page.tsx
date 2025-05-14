@@ -72,7 +72,7 @@ const HomePage = async () => {
                             <br className="hidden md:block" />
                             <span className="hidden md:block">Shorten, track, and organize all your work in one place.</span>
                         </p>
-                        <div className="flex items-center justify-center whitespace-nowrap gap-4 z-50">
+                        <div className="flex items-center justify-center whitespace-nowrap gap-4">
                             {/* <Link href={user ? "/dashboard" : "/auth/sign-in"} className="flex items-center"> */}
                             <InteractiveHoverButton>
                                 <a
@@ -86,8 +86,8 @@ const HomePage = async () => {
                         </div>
                     </AnimationContainer>
 
-                    <AnimationContainer delay={0.2} className="relative pt-20 pb-20 md:py-32 px-2 bg-transparent w-full -mt-40">
-                        <div className="relative mx-auto max-w-7xl rounded-xl lg:rounded-[32px] border border-neutral-200/50 p-2 backdrop-blur-lg border-neutral-700 bg-neutral-800/50 md:p-4 mt-15 -z-1"></div>
+                    <AnimationContainer delay={0.2} className="relative pt-20 pb-20 md:py-32 px-2 bg-transparent w-full">
+                        <div className="relative mx-auto max-w-7xl rounded-xl lg:rounded-[32px] border border-neutral-200/50 p-2 backdrop-blur-lg border-neutral-700 bg-neutral-800/50 md:p-4 mt-12"></div>
                         <div className="absolute md:top-[22%] left-1/2 gradient w-3/4 -translate-x-1/2 h-1/4 md:h-1/3 inset-0 blur-[5rem] animate-image-glow"></div>
                         <div className="-m-2 rounded-xl p-2 ring-1 ring-inset ring-foreground/20 lg:-m-4 lg:rounded-2xl bg-opacity-50 backdrop-blur-3xl">
                             {/* <BorderBeam
