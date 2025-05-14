@@ -14,18 +14,23 @@ import Image from "next/image";
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 import Container from "@/components/global/container";
 import Marquee from "@/components/ui/marquee";
+import { Spotlight } from "@/components/ui/spotlight";
+
 
 const HomePage = async () => {
 
     const user = await currentUser();
 
     return (
-        <div className="overflow-x-hidden scrollbar-hide size-full">
+        <div className=" scrollbar-hide size-full">
             {/* Hero Section */}
             <MaxWidthWrapper>
-                <div className="flex flex-col items-center justify-center w-full text-center bg-gradient-to-t from-background">
+                <div className="relative flex flex-col items-center justify-center w-full text-center bg-gradient-to-t from-background">
 
                     <AnimationContainer className="flex flex-col items-center justify-center w-full text-center">
+                        <Spotlight
+                            className="-top-20 left-0 md:left-60 md:-top-20"
+                            fill="rgba(255, 255, 255, 0.5)"/>
                         {/* <button className="group relative grid overflow-hidden rounded-full px-4 py-1 shadow-[0_1000px_0_0_hsl(0_0%_20%)_inset] transition-colors duration-200">
                             <span>
                                 <span className="spark mask-gradient absolute inset-0 h-[100%] w-[100%] animate-flip overflow-hidden rounded-full [mask:linear-gradient(white,_transparent_50%)] before:absolute before:aspect-square before:w-[200%] before:rotate-[-90deg] before:animate-rotate before:bg-[conic-gradient(from_0deg,transparent_0_340deg,white_360deg)] before:content-[''] before:[inset:0_auto_auto_50%] before:[translate:-50%_-15%]" />
@@ -82,7 +87,8 @@ const HomePage = async () => {
                     </AnimationContainer>
 
                     <AnimationContainer delay={0.2} className="relative pt-20 pb-20 md:py-32 px-2 bg-transparent w-full">
-                        <div className="absolute md:top-[10%] left-1/2 gradient w-3/4 -translate-x-1/2 h-1/4 md:h-1/3 inset-0 blur-[5rem] animate-image-glow"></div>
+                        {/* <div className="relative mx-auto max-w-7xl rounded-xl lg:rounded-[32px] border border-neutral-200/50 p-2 backdrop-blur-lg border-neutral-700 bg-neutral-800/50 md:p-4 mt-12"></div> */}
+                        <div className="absolute md:top-[13%] left-1/2 gradient w-3/4 -translate-x-1/2 h-1/4 md:h-1/3 inset-0 blur-[5rem] animate-image-glow"></div>
                         <div className="-m-2 rounded-xl p-2 ring-1 ring-inset ring-foreground/20 lg:-m-4 lg:rounded-2xl bg-opacity-50 backdrop-blur-3xl">
                             {/* <BorderBeam
                                 size={250}
