@@ -23,7 +23,7 @@ const HomePage = async () => {
     const user = await currentUser();
 
     return (
-        <div className=" scrollbar-hide size-full">
+        <div className=" scrollbar-hide size-full select-none">
             {/* Hero Section */}
             <MaxWidthWrapper>
                 <div className="relative flex flex-col items-center justify-center w-full text-center bg-gradient-to-t from-background">
@@ -64,8 +64,8 @@ const HomePage = async () => {
                         </Container>
                         <h1 className="text-foreground text-center py-6 text-5xl font-medium tracking-normal text-balance sm:text-6xl md:text-7xl lg:text-8xl !leading-[1.15] w-full font-heading">
                             {/* <span className="text-transparent bg-gradient-to-t from-gray-100/10 to-white bg-clip-text inline-block" >Your AI Wingman for </span> */}
-                            <span className="inline-block tracking-tighter" >Your AI Wingman for </span>
-                            <span className="text-transparent bg-gradient-to-t from-violet-500 to-fuchsia-500 bg-clip-text inline-block">
+                            <span className="tracking-tighter" >Your AI Wingman for </span>
+                            <span className="text-transparent bg-gradient-to-t from-violet-500 to-fuchsia-500 bg-clip-text">
                                 Leads
                             </span>
                         </h1>
@@ -90,8 +90,8 @@ const HomePage = async () => {
 
                     <AnimationContainer delay={0.2} className="relative pt-20 pb-20 md:py-32 px-2 bg-transparent w-full mt-12 z-40">
                         {/* <div className="relative mx-auto max-w-7xl rounded-xl lg:rounded-[32px] border border-neutral-200/50 p-2 backdrop-blur-lg border-neutral-700 bg-neutral-800/50 md:p-4 mt-12"></div> */}
-                        <div className="absolute md:top-[5%] left-1/2 gradient w-3/4 -translate-x-1/2 h-1/4 md:h-1/3 inset-0 blur-[5rem] animate-image-glow"></div>
                         <div className="rounded-2xl p-2 ring-1 ring-inset ring-foreground/20 lg:-m-4 bg-opacity-50 backdrop-blur-3xl -translate-y-32">
+                        <div className="absolute md:top-[5%] left-1/2 gradient w-3/4 -translate-x-1/2 h-1/4 md:h-1/3 inset-0 blur-[5rem] animate-image-glow"></div>
                             {/* <BorderBeam
                                 size={250}
                                 duration={12}
@@ -112,8 +112,8 @@ const HomePage = async () => {
                                 thumbnailSrc="/assets/dashboard-dark.svg"
                                 thumbnailAlt="Thumb"
                             />
-                            <div className="absolute -bottom-4 inset-x-0 w-full h-1/2 bg-gradient-to-t from-background z-40"></div>
-                            <div className="absolute bottom-0 md:-bottom-8 inset-x-0 w-full h-1/4 bg-gradient-to-t from-background z-50"></div>
+                            <div className="absolute -bottom-4 inset-x-0 w-full h-1/2 bg-gradient-to-t from-background z-40 my-5"></div>
+                            <div className="absolute bottom-0 md:-bottom-8 inset-x-0 w-full h-1/4 bg-gradient-to-t from-background z-50 my-5"></div>
                         </div>
                     </AnimationContainer>
                 </div>
