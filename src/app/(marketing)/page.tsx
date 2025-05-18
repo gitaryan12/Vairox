@@ -1,6 +1,5 @@
 import { AnimationContainer, MaxWidthWrapper, PricingCards } from "@/components";
 import { BentoCard, BentoGrid, CARDS } from "@/components/ui/bento-grid";
-import { BorderBeam } from "@/components/ui/border-beam";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { LampContainer } from "@/components/ui/lamp";
@@ -19,7 +18,6 @@ import HeroVideoDialog from "@/components/magicui/hero-video-dialog";
 
 
 const HomePage = async () => {
-
     const user = await currentUser();
 
     return (

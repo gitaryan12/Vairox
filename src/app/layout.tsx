@@ -6,7 +6,7 @@ import { aeonik, cn, generateMetadata, inter } from "@/utils";
 export const metadata = generateMetadata();
 
 export default function RootLayout({
-    children,
+    children,   
 }: {
     children: React.ReactNode;
 }) {
@@ -17,6 +17,7 @@ export default function RootLayout({
                     "min-h-screen bg-background text-foreground antialiased !font-default overflow-x-hidden",
                     aeonik.variable,
                     inter.variable,
+                    
                 )}
             >
                 <Providers>

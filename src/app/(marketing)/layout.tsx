@@ -1,6 +1,6 @@
 import React from 'react';
 import { Footer, Navbar } from "@/components";
-import { Spotlight } from '@/components/ui/spotlight';
+import {ReactLenis} from "@/utils/lenis"
 
 interface Props {
     children: React.ReactNode
@@ -8,6 +8,7 @@ interface Props {
 
 const MarketingLayout = ({ children }: Props) => {
     return (
+            <ReactLenis root>
         <>
             <head>
                 <title>Vairox - AI Agents & Lead Gen</title>
@@ -19,7 +20,6 @@ const MarketingLayout = ({ children }: Props) => {
                 <meta name="twitter:card" content="summary_large_image" />
             </head>
 
-
             <div id="home" className="absolute inset-0 bg-[linear-gradient(to_right,rgba(23,23,23,0.4)_1px,transparent_1px),linear-gradient(to_bottom,rgba(23,23,23,0.4)_1px,transparent_1px)] bg-[size:3rem_3rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_110%)] h-full mt-[63px]" />
             <Navbar />
             <main className="mt-20 mx-auto w-full z-0 relative">
@@ -27,7 +27,9 @@ const MarketingLayout = ({ children }: Props) => {
                 {/* <Spotlight /> */}
             </main>
             <Footer />
+
         </>
+            </ReactLenis>
     );
 };
 
