@@ -100,7 +100,7 @@ const HomePage = async () => {
                 asChild
                 size="lg"
                 variant="outline"
-                className="hidden md:flex"
+                // className="hidden md:flex"
               >
                 <a
                   href="https://calendly.com/cloverservices12/30min/"
