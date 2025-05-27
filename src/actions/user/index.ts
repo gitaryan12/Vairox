@@ -1,18 +1,18 @@
-"use server"
+"use server";
 
-import { currentUser } from "@clerk/nextjs/server"
-import { redirect } from "next/navigation"
+import { currentUser } from "@clerk/nextjs/server";
+import { redirect } from "next/navigation";
 
 export const onCurrentUser = async () => {
-    const user = await currentUser()
-    if (!user) return redirect("/auth/sign-in")
+  const user = await currentUser();
+  if (!user) return redirect("/sign-in");
 
-    return user
-}
+  return user;
+};
 
 export const onBoardUser = async () => {
-    const user = await currentUser()
-    // try {
-    //     const found = await findUser
-    // } catch (error) {}
-}
+  const user = await currentUser();
+  // try {
+  //     const found = await findUser
+  // } catch (error) {}
+};

@@ -16,7 +16,7 @@
 //         ],
 //         btn: {
 //             text: "Start for free",
-//             href: "/auth/sign-up?plan=free",
+//             href: "/sign-up?plan=free",
 //             variant: "default",
 //         }
 //     },
@@ -38,7 +38,7 @@
 //         ],
 //         btn: {
 //             text: "Get started",
-//             href: "/auth/sign-up?plan=pro",
+//             href: "/sign-up?plan=pro",
 //             variant: "purple",
 //         }
 //     },
@@ -60,7 +60,7 @@
 //         ],
 //         btn: {
 //             text: "Contact team",
-//             href: "/auth/sign-up?plan=business",
+//             href: "/sign-up?plan=business",
 //             variant: "default",
 //         }
 //     }
@@ -116,7 +116,7 @@
 //         ],
 //         btn: {
 //             text: "Start for free",
-//             href: "/auth/sign-up?plan=free",
+//             href: "/sign-up?plan=free",
 //             variant: "default",
 //         }
 //     },
@@ -138,7 +138,7 @@
 //         ],
 //         btn: {
 //             text: "Get started",
-//             href: "/auth/sign-up?plan=pro",
+//             href: "/sign-up?plan=pro",
 //             variant: "purple",
 //         }
 //     },
@@ -160,115 +160,153 @@
 //         ],
 //         btn: {
 //             text: "Contact team",
-//             href: "/auth/sign-up?plan=business",
+//             href: "/sign-up?plan=business",
 //             variant: "default",
 //         }
 //     }
 // ];
 
 export const PLANS = [
-    {
-      name: "Free",
-      info: "For early users and solo founders",
-      price: {
-        monthly: 0,yearly: Math.round(0 * 12 * (1 - 0.12)),
-      },
-      features: [
-        { text: "AI chat support", tooltip: "Respond to inquiries in real-time via web chat" },
-        { text: "Limited outreach", tooltip: "Send up to 50 outreach messages per month" },
-        { text: "Basic lead tracking", tooltip: "View lead name, email, and basic status" },
-        { text: "Community support", tooltip: "Access support through our Discord community" },
-      ],
-      btn: {
-        text: "Start for free",
-        href: "/auth/sign-up?plan=free",
-        variant: "default",
-      },
+  {
+    name: "Free",
+    info: "For early users and solo founders",
+    price: {
+      monthly: 0,
+      yearly: Math.round(0 * 12 * (1 - 0.12)),
     },
-    {
-      name: "Pro",
-      info: "For startups & small teams",
-      price: {
-        monthly: 99,
-        yearly: Math.round(99 * 12 * (1 - 0.12)), // e.g. 12% discount
+    features: [
+      {
+        text: "AI chat support",
+        tooltip: "Respond to inquiries in real-time via web chat",
       },
-      features: [
-        { text: "Multi-channel outreach", tooltip: "Email, SMS, and LinkedIn automation" },
-        { text: "Meeting scheduling", tooltip: "Auto-book calls via Google Calendar" },
-        { text: "CRM sync", tooltip: "HubSpot + Airtable integration" },
-        { text: "Follow-up automation", tooltip: "Trigger personalized sequences automatically" },
-        { text: "Priority support", tooltip: "Fast support via chat and email" },
-      ],
-      btn: {
-        text: "Get started",
-        href: "/auth/sign-up?plan=pro",
-        variant: "purple",
+      {
+        text: "Limited outreach",
+        tooltip: "Send up to 50 outreach messages per month",
       },
+      {
+        text: "Basic lead tracking",
+        tooltip: "View lead name, email, and basic status",
+      },
+      {
+        text: "Community support",
+        tooltip: "Access support through our Discord community",
+      },
+    ],
+    btn: {
+      text: "Start for free",
+      href: "/sign-up?plan=free",
+      variant: "default",
     },
-    {
-      name: "Business",
-      info: "For scale-ups and enterprise",
-      price: {
-        monthly: 499,
-        yearly: Math.round(499 * 12 * (1 - 0.15)),
-      },
-      features: [
-        { text: "Custom AI workflows", tooltip: "Tailored outreach and objection handling flows" },
-        { text: "Voice sales agent", tooltip: "Phone calls with AI voice (via Twilio + ElevenLabs)" },
-        { text: "Full CRM sync", tooltip: "Salesforce + custom API support" },
-        { text: "Dedicated account manager", tooltip: "White-glove onboarding and support" },
-        { text: "Advanced analytics", tooltip: "Custom dashboard with lead insights" },
-      ],
-      btn: {
-        text: "Contact sales",
-        href: "/auth/sign-up?plan=business",
-        variant: "default",
-      },
+  },
+  {
+    name: "Pro",
+    info: "For startups & small teams",
+    price: {
+      monthly: 99,
+      yearly: Math.round(99 * 12 * (1 - 0.12)), // e.g. 12% discount
     },
-  ];
-  
+    features: [
+      {
+        text: "Multi-channel outreach",
+        tooltip: "Email, SMS, and LinkedIn automation",
+      },
+      {
+        text: "Meeting scheduling",
+        tooltip: "Auto-book calls via Google Calendar",
+      },
+      { text: "CRM sync", tooltip: "HubSpot + Airtable integration" },
+      {
+        text: "Follow-up automation",
+        tooltip: "Trigger personalized sequences automatically",
+      },
+      { text: "Priority support", tooltip: "Fast support via chat and email" },
+    ],
+    btn: {
+      text: "Get started",
+      href: "/sign-up?plan=pro",
+      variant: "purple",
+    },
+  },
+  {
+    name: "Business",
+    info: "For scale-ups and enterprise",
+    price: {
+      monthly: 499,
+      yearly: Math.round(499 * 12 * (1 - 0.15)),
+    },
+    features: [
+      {
+        text: "Custom AI workflows",
+        tooltip: "Tailored outreach and objection handling flows",
+      },
+      {
+        text: "Voice sales agent",
+        tooltip: "Phone calls with AI voice (via Twilio + ElevenLabs)",
+      },
+      { text: "Full CRM sync", tooltip: "Salesforce + custom API support" },
+      {
+        text: "Dedicated account manager",
+        tooltip: "White-glove onboarding and support",
+      },
+      {
+        text: "Advanced analytics",
+        tooltip: "Custom dashboard with lead insights",
+      },
+    ],
+    btn: {
+      text: "Contact sales",
+      href: "/sign-up?plan=business",
+      variant: "default",
+    },
+  },
+];
 
 export const PRICING_FEATURES = [
-    {
-      text: "AI-powered lead outreach",
-      tooltip: "Automatically send emails, SMS, and LinkedIn messages to new leads"
-    },
-    {
-      text: "Real-time chat & voice conversations",
-      tooltip: "Engage leads through chat and voice using natural-sounding AI"
-    },
-    {
-      text: "Calendar scheduling",
-      tooltip: "Book meetings automatically using Google Calendar integration"
-    },
-    {
-      text: "CRM sync",
-      tooltip: "Sync leads and conversations with CRMs like HubSpot or Salesforce"
-    },
-    {
-      text: "Follow-up automation",
-      tooltip: "Trigger multi-step follow-up sequences based on lead behavior"
-    },
-    {
-      text: "Objection handling",
-      tooltip: "Respond smartly to common sales objections with AI-trained responses"
-    },
-    {
-      text: "Lead memory",
-      tooltip: "Remember lead interactions using vector memory (Pinecone, Weaviate)"
-    },
-    {
-      text: "Voice call support",
-      tooltip: "Handle inbound and outbound sales calls with human-like voice AI"
-    },
-    {
-      text: "Analytics dashboard",
-      tooltip: "Track lead activity, conversion rates, and engagement insights"
-    },
-    {
-      text: "Priority support",
-      tooltip: "Get direct help and faster response times from the Vairox AI team"
-    }
-  ];
+  {
+    text: "AI-powered lead outreach",
+    tooltip:
+      "Automatically send emails, SMS, and LinkedIn messages to new leads",
+  },
+  {
+    text: "Real-time chat & voice conversations",
+    tooltip: "Engage leads through chat and voice using natural-sounding AI",
+  },
+  {
+    text: "Calendar scheduling",
+    tooltip: "Book meetings automatically using Google Calendar integration",
+  },
+  {
+    text: "CRM sync",
+    tooltip:
+      "Sync leads and conversations with CRMs like HubSpot or Salesforce",
+  },
+  {
+    text: "Follow-up automation",
+    tooltip: "Trigger multi-step follow-up sequences based on lead behavior",
+  },
+  {
+    text: "Objection handling",
+    tooltip:
+      "Respond smartly to common sales objections with AI-trained responses",
+  },
+  {
+    text: "Lead memory",
+    tooltip:
+      "Remember lead interactions using vector memory (Pinecone, Weaviate)",
+  },
+  {
+    text: "Voice call support",
+    tooltip: "Handle inbound and outbound sales calls with human-like voice AI",
+  },
+  {
+    text: "Analytics dashboard",
+    tooltip: "Track lead activity, conversion rates, and engagement insights",
+  },
+  {
+    text: "Priority support",
+    tooltip:
+      "Get direct help and faster response times from the Vairox AI team",
+  },
+];
 
 export const WORKSPACE_LIMIT = 2;
