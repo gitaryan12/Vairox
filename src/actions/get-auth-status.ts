@@ -1,23 +1,21 @@
 "use server";
 
 import { db } from "@/lib";
-import { currentUser } from "@clerk/nextjs/server";
 
 const getAuthStatus = async () => {
     try {
-        const user = await currentUser();
+        // TODO: Implement your custom authentication logic here
+        const session = await getSession(); // You'll need to implement this based on your auth solution
+        
+        if (!session) {
+            return { error: "User not authenticated" };
+        }
 
-    if (!user?.id || !user?.primaryEmailAddress?.emailAddress) {
-        return { error: "User not found" };
-    }
-
-    let clerkId = user.id;
-
-    const existingUser = await db.user.findFirst({
-        where: {
-            clerkId,
-        },
-    });
+        const user = await db.user.findFirst({
+            where: {
+                id: session.userId,
+            },
+        });
 
     console.log("existingUser", existingUser);
 

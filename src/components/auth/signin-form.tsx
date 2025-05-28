@@ -2,22 +2,20 @@
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { useSignIn } from "@clerk/nextjs";
 import { Eye, EyeOff, LoaderIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { Label } from "../ui/label";
 import { EnCryptInput } from "@/utils/functions/customFunction";
 
-interface signInform {
+interface SignInForm {
   email: string;
   password: string;
 }
 
 const SignInForm = () => {
   const router = useRouter();
-
-  const { signIn, isLoaded, setActive } = useSignIn();
+  const [loading, setLoading] = useState(false);
 
   const [formData, setFormData] = useState<signInform>({
     email: "",
@@ -29,7 +27,7 @@ const SignInForm = () => {
 
   const handleSignIn = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!isLoaded) return;
+    // if (!isLoaded) return;
 
     if (!formData?.email || !formData?.password) {
       setIsLoading(false);
@@ -87,7 +85,7 @@ const SignInForm = () => {
             id="email"
             type="email"
             value={formData?.email}
-            disabled={!isLoaded || isLoading}
+            disabled={false}
             onChange={(e) => {
               setFormData((prevData: any) => {
                 return {
@@ -107,7 +105,7 @@ const SignInForm = () => {
               id="password"
               type={showPassword ? "text" : "password"}
               value={formData.password}
-              disabled={!isLoaded || isLoading}
+              disabled={ isLoading}
               onChange={(e) => {
                 setFormData((prevData: any) => {
                   return {
@@ -123,7 +121,7 @@ const SignInForm = () => {
               type="button"
               size="icon"
               variant="ghost"
-              disabled={!isLoaded || isLoading}
+              disabled={ isLoading}
               className="absolute top-1 right-1"
               onClick={() => setShowPassword(!showPassword)}
             >
@@ -138,7 +136,7 @@ const SignInForm = () => {
         <div className="mt-4 w-full">
           <Button
             type="submit"
-            disabled={!isLoaded || isLoading}
+            disabled={ isLoading}
             className="w-full"
           >
             {isLoading ? (

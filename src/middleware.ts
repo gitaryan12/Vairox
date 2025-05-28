@@ -1,29 +1,21 @@
-import { clerkMiddleware } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 
-export default clerkMiddleware((auth, req) => {
-  const url = req.nextUrl.pathname;
+// Add your custom authentication logic here
+export function middleware(request: Request) {
+  const { pathname } = new URL(request.url);
 
-  const { userId } = auth();
-
-  // Protect /dashboard and sub-routes
-  if (!userId && url.startsWith("/dashboard")) {
-    return NextResponse.redirect(new URL("/sign-in", req.url));
+  // Example: Protect dashboard routes
+  if (pathname.startsWith('/dashboard')) {
+    // Add your auth check logic here
+    // For now, we'll just allow access
+    return NextResponse.next();
   }
 
-  // Redirect authenticated users away from auth routes
-  if (userId && (url.startsWith("/sign-in") || url.startsWith("/sign-up"))) {
-    return NextResponse.redirect(new URL("/dashboard", req.url));
-  }
-});
+  return NextResponse.next();
+}
 
 export const config = {
   matcher: [
-    "/((?!.*\\..*|_next).*)",
-    "/(api|trpc)(.*)",
-    "/dashboard(.*)",
-    "/",
-    "/sign-in",
-    "/sign-up",
-  ],
+    '/dashboard/:path*'
+  ]
 };

@@ -1,0 +1,6 @@
+# app
+NEXT_PUBLIC_APP_DOMAIN=
+NEXT_PUBLIC_APP_NAME= Vairox
+
+# database
+DATABASE_URL=postgresql://vairox_ai_owner:npg_Zf0dAW3TRtjb@ep-nameless-fire-a4v3qofm-pooler.us-east-1.aws.neon.tech/vairox_ai?sslmode=require

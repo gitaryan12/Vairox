@@ -18,7 +18,6 @@ import MagicBadge from "@/components/ui/magic-badge";
 import MagicCard from "@/components/ui/magic-card";
 import { COMPANIES, PROCESS } from "@/utils";
 import { REVIEWS } from "@/utils/constants/misc";
-import { currentUser } from "@clerk/nextjs/server";
 import { ArrowRightIcon, CreditCardIcon, StarIcon } from "lucide-react";
 import Image from "next/image";
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
@@ -28,7 +27,7 @@ import { Spotlight } from "@/components/ui/spotlight";
 import HeroVideoDialog from "@/components/magicui/hero-video-dialog";
 
 const HomePage = async () => {
-  const user = await currentUser();
+  const user = {};
 
   return (
     <div className=" scrollbar-hide size-full select-none">

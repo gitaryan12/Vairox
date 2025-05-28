@@ -2,7 +2,6 @@
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { useSignUp } from "@clerk/nextjs";
 import { Eye, EyeOff, LoaderIcon } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -13,9 +12,8 @@ import { Label } from "../ui/label";
 
 const SignUpForm = () => {
   const router = useRouter();
-
-  const { signUp, isLoaded, setActive } = useSignUp();
-
+  const [loading, setLoading] = useState(false);
+  
   const [fullName, setFullName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [code, setCode] = useState<string>("");

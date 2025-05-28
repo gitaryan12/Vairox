@@ -16,14 +16,16 @@ datasource db {
 
 model User {
   id            String    @id @default(cuid()) @map("_id")
-  clerkId       String?   @unique
   name          String?
-  email         String?   @unique
-  emailVerified DateTime?
+  email         String    @unique
+  password      String
   image         String?
+  sessionToken  String?   @unique
+  emailVerified DateTime?
 
   links            Link[]
   createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
   subscribed       Boolean  @default(true)
   source           String?
   defaultWorkspace String?
